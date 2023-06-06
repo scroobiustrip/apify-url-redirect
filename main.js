@@ -45,7 +45,7 @@ Actor.main(async () => {
 
     const loadedUrl = await page.url();
     const loadedUrlNormalized = normalizeUrl(loadedUrl);
-    const origionalUrl = request.userData.origionalUrl;
+    const originalUrl = request.userData.originalUrl;
 
     // Get MetaRefresh URL
     try {
@@ -72,7 +72,7 @@ Actor.main(async () => {
     }
 
     const result = {
-      origionalUrl,
+      originalUrl,
       loadedUrl,
       loadedUrlNormalized,
       isOk,
@@ -86,12 +86,12 @@ Actor.main(async () => {
   }
 
   async function failedRequestHandler({ request }) {
-    const origionalUrl = request.userData.origionalUrl;
+    const originalUrl = request.userData.originalUrl;
     const attemptedUrl = request.url;
     const { errorMessages } = request.errorMessages;
 
     const result = {
-      origionalUrl,
+      originalUrl,
       attemptedUrl,
       "#errorMessage": errorMessages,
       "#isFailed": true,

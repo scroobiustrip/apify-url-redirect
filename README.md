@@ -35,7 +35,7 @@ For a list of input URLs, get a list of final URLs that are loaded after redirec
 
 ```json
 {
-  "origionalUrl": "http://google.com/",
+  "originalUrl": "http://google.com/",
   "attemptedUrl": "http://www.google.com",
   "loadedUrl": "https://www.google.com/",
   "loadedUrlNormalized": "https://www.google.com",
