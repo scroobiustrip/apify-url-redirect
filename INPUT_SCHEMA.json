@@ -1,0 +1,21 @@
+{
+  "title": "URL Redirects",
+  "description": "Actor that takes a list of URLs and provides loaded URLs.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urlList": {
+      "title": "URLs",
+      "type": "string",
+      "description": "Enter 1 on each line",
+      "editor": "textarea"
+    },
+    "remoteUrlList": {
+      "title": "Remote URL",
+      "type": "string",
+      "description": "Remote file with 1 URL on each line",
+      "editor": "textfield"
+    }
+  },
+  "required": []
+}
