@@ -41,7 +41,7 @@ Actor.main(async () => {
   async function requestHandler({ request, page, response }) {
     let metarefresh, statusCode, statusText, isOk, ip;
 
-    await page.waitForTimeout(2000);
+    // await page.waitForTimeout(2000);
 
     const loadedUrl = await page.url();
     const loadedUrlNormalized = normalizeUrl(loadedUrl);
