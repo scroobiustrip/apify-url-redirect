@@ -120,7 +120,7 @@ Actor.main(async () => {
     },
     requestHandler,
     failedRequestHandler,
-    requestHandlerTimeoutSecs: 10,
+    requestHandlerTimeoutSecs: 30,
     ...crawlerOptionsOverrides,
   });
 
