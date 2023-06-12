@@ -42,6 +42,8 @@ Actor.main(async () => {
     let metarefresh, statusCode, statusText, isOk, ip;
 
     // await page.waitForTimeout(2000);
+    // const userAgent = scenario.userAgent || config.userAgent || '';
+    // await page.setUserAgent(userAgent);
 
     const loadedUrl = await page.url();
     
@@ -107,6 +109,11 @@ Actor.main(async () => {
 
   const crawler = new PlaywrightCrawler({
     requestList,
+    launchContext: {
+        launchOptions: {
+            headless: true, 
+        }, 
+    },
     requestHandler,
     failedRequestHandler,
     requestHandlerTimeoutSecs: 10,
