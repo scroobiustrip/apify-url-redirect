@@ -44,6 +44,9 @@ Actor.main(async () => {
     // await page.waitForTimeout(2000);
 
     const loadedUrl = await page.url();
+    
+    console.log({loadedUrl});
+    
     const loadedUrlNormalized = normalizeUrl(loadedUrl);
     const originalUrl = request.userData.originalUrl;
 
