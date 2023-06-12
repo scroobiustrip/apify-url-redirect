@@ -1,6 +1,7 @@
 import { Actor } from "apify";
 import { Dataset, PlaywrightCrawler, RequestList } from "crawlee";
 import fetch from "node-fetch";
+import userAgent from "user-agents";
 import normalizeUrl from "./lib/normalize-url.js";
 import pTimeout from "./lib/p-timeout.js";
 import prepareRequestListFromText from "./lib/prepare-request-list.js";
@@ -32,6 +33,7 @@ Actor.main(async () => {
 
   // Get actor config
   const { crawlerOptionsOverrides } = input;
+  const agent = userAgent.random().toString();
 
   const requestList = await RequestList.open(
     `${process.env.APIFY_ACTOR_RUN_ID}-list`,
@@ -110,8 +112,10 @@ Actor.main(async () => {
   const crawler = new PlaywrightCrawler({
     requestList,
     launchContext: {
+        useChrome: true,
         launchOptions: {
-            headless: true, 
+            headless: true,
+            userAgent: agent
         }, 
     },
     requestHandler,
