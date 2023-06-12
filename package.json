@@ -7,7 +7,8 @@
     "crawlee": "^3.0.4",
     "node-fetch": "^3.2.10",
     "normalize-url": "^7.2.0",
-    "playwright": "^1.26.1"
+    "playwright": "^1.26.1",
+    "user-agents": "^1.0.14"
   },
   "scripts": {
     "start": "node main.js",
